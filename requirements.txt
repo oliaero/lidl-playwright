@@ -1,0 +1,4 @@
+behave==1.2.6
+playwright==1.41.2
+PyHamcrest==2.1.0
+
