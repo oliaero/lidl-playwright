@@ -1,13 +1,15 @@
 from behave import *
+from hamcrest import assert_that, is_
 
 from tests.feature.page_object.home_page import HomePage
+from tests.feature.page_object.recipes_page import RecipesPage
 
 use_step_matcher("re")
 
 
 @given("I am on the Home page")
 def step_impl(context):
-    context.home_page = HomePage(context.browser)
+    context.home_page = HomePage(context.driver)
     context.home_page.accept_cookie_banner()
 
 
@@ -18,11 +20,7 @@ def step_impl(context):
 
 @then("I can see recipes on the page")
 def step_impl(context):
-    """
-    :type context: behave.runner.Context
-    """
-    raise NotImplementedError(u'STEP: Then I can see recipes on the page')
-
+    assert_that(context.recipes_page.all_recipes_are_visible(), is_(True))
 
 @given("I am on the recipes page")
 def step_impl(context):
