@@ -4,9 +4,9 @@ Feature: Recipes filter
   So I can find faster the recipes that I am interested in
 
   Scenario: See all recipies
-    Given I am on the Home page
+    Given I am on the Home Recipes page
     When I click "Todas las recetas" on menu bar
-    Then I can see recipes on the page
+    Then I can see "36" recipes on the page
 
 
   Scenario: Filter recipies by course
